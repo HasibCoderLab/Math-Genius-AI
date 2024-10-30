@@ -16,6 +16,12 @@ body{
     gap: 20px;
     padding: 20px;
 }
+#img{
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+ 
+}
 h1{
     font-size: 4vmax;
     background: linear-gradient(to right,white,rgb(9,192,216),rgb(215,12,94));
@@ -55,7 +61,7 @@ h1{
     cursor: pointer;
 }
 .inner-upload-image:hover{
-    box-shadow:inset 2px 2px 10px #f478f4;
+    box-shadow:inset 2px 2px 15px #05e27b;
     background-color: rgb(21, 26, 32);
     
 
@@ -70,6 +76,11 @@ button{
     color: white;
    cursor: pointer;
 }
+button:hover{
+    box-shadow: 0px 0px 30px cornflowerblue;
+
+}
+
 
 #image{
     width: 100%;
@@ -107,8 +118,28 @@ footer  >h4{
 }
 footer > h5{
     margin-top: 30%;
-    color: aquamarine;
+    background: linear-gradient(to right,white,rgb(9,192,216),rgb(215,12,94));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
     font-size: 20px;
+}
+.contact{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    background: linear-gradient(to right,white,rgb(5, 165, 194),rgb(215, 7, 90));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+}
+.mean i {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
 }
 .icon{
     margin: 20px 30px;
