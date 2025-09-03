@@ -4,59 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Virtual Maths Teacher </title>
+    <title>MathGenius AI - Virtual Maths Teacher</title>
     <link rel="shortcut icon" href="Midea/icon/icon.jpeg" type="image/x-icon">
-    <!-- font awesome CDN -->
-
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- font awesome CDN -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <img id="img" src="Midea/icon/icon.jpeg" alt="">
-    <h1>I,m Your Virtual Maths Teacher</h1>
+    <div class="mode-toggle">
+        <i class="fa-solid fa-sun" id="lightMode"></i>
+        <i class="fa-solid fa-moon" id="darkMode"></i>
+    </div>
+
+    <img id="img" src="Midea/icon/icon.jpeg" alt="Teacher Icon">
+    <h1>I'm Your Virtual Maths Teacher</h1>
+
     <div class="upload-image">
         <div class="inner-upload-image">
-            <input type="file" name="" id="" hidden>
-
+            <input type="file" hidden>
             <img src="" alt="" id="image">
-
             <img src="Midea/arrow.svg" alt="" id="icon">
-            <span> Upload Your Problem </span>
-
+            <span>Upload Your Problem</span>
         </div>
         <button>Solve</button>
     </div>
-<img src="Midea/loading.gif" alt=""id="loding" width="80px">
+
+    <img src="Midea/loading.gif" alt="" id="loading" width="80px">
+    
     <div class="output">
-        <pre id="text">
-
-        </pre>
+        <pre id="text"></pre>
     </div>
 
-    <div class="mean">
-        <footer>
-            <h5>  Desing & Programing By Hasib Hasan </h5>
-           <h4>Copyright  <span> ©</span> 2024 All Rights Reserved</h4>
-           
-            <hr>
-            <div class="contact">
-                <h3> Contact With Me </h3>
-                <i class="fa-solid fa-arrows-down-to-line "></i>
+    <footer>
+        <h5>Designed & Programmed By Hasib Hasan</h5>
+        <h4>Copyright <span>©</span> 2024 All Rights Reserved</h4>
+        <hr>
+        <div class="contact">
+            <h3>Contact With Me</h3>
+            <i class="fa-solid fa-arrows-down-to-line"></i>
+        </div>
+        <div class="icon">
+            <a href="https://www.facebook.com/profile.php?id=100090181599136" target="_blank">
+                <i class="fa-brands fa-facebook" id="face"></i>
+            </a>
+            <a href="https://github.com/md-hasib1" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+    </footer>
 
-            </div>
-
-            <div class="icon">
-                <a href="https://www.facebook.com/profile.php?id=100090181599136" target="_blank"><i
-                        class="fa-brands fa-facebook " id="face"></i></a>
-
-                <a href="https://github.com/md-hasib1" target="_blank"> <i class="fa-brands fa-github"></i></a>
-            </div>
-        </footer>
-    </div>
     <script src="script.js"></script>
 </body>
 
