@@ -30,6 +30,7 @@ let fileDetails = { mime_type: null, data: null };
 input.addEventListener("change", () => {
     const file = input.files[0];
     if (!file) return;
+
     let reader = new FileReader();
     reader.onload = (e) => {
         let base64data = e.target.result.split(",")[1];
@@ -48,9 +49,37 @@ input.addEventListener("change", () => {
 // Click upload box
 innerUploadImage.addEventListener("click", () => { input.click(); });
 
+// Typing Effect Function (line by line)
+function typeText(content, speed = 40) {
+    text.innerHTML = "";
+    output.style.display = "block";
+    let lines = content.split("\n").filter(l => l.trim() !== "");
+    let lineIndex = 0;
+
+    function typeLine(line) {
+        let charIndex = 0;
+        let interval = setInterval(() => {
+            if (charIndex < line.length) {
+                text.innerHTML += line[charIndex];
+                charIndex++;
+            } else {
+                clearInterval(interval);
+                text.innerHTML += "\n";
+                lineIndex++;
+                if (lineIndex < lines.length) {
+                    setTimeout(() => typeLine(lines[lineIndex]), 200);
+                }
+            }
+        }, speed);
+    }
+
+    typeLine(lines[lineIndex]);
+}
+
 // API Request
 async function generateResponse() {
     loading.style.display = "block";
+
     const Api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=YOUR_KEY";
 
     const RequestOption = {
@@ -72,12 +101,12 @@ async function generateResponse() {
         let response = await fetch(Api_url, RequestOption);
         let data = await response.json();
         let apiResponse = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
-        text.innerHTML = apiResponse;
-        output.style.display = "block";
+
+        // Typing effect
+        typeText(apiResponse, 30);
     } catch (e) {
         console.log(e);
-        text.innerHTML = "Error generating solution. Try again.";
-        output.style.display = "block";
+        typeText("Error generating solution. Try again.", 30);
     } finally {
         loading.style.display = "none";
     }
